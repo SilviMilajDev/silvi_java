@@ -1,4 +1,4 @@
-package Seminari2.Ushtrimi1;
+package Seminari2.DateFormatChanger;
 
 public class Main
 {

@@ -1,4 +1,4 @@
-package Seminari2.Ushtrimi2;
+package Seminari2.StringReverse;
 
 public class Main
 {

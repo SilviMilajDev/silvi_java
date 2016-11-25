@@ -1,4 +1,4 @@
-package Seminari4.Ushtrimi2;
+package Seminari4.Drejtkendesh;
 
 public class Main
 {

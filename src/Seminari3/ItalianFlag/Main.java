@@ -1,4 +1,4 @@
-package Seminari3.Ushtrimi1;
+package Seminari3.ItalianFlag;
 
 import javax.swing.*;
 

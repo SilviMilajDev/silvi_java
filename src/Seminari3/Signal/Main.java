@@ -1,4 +1,4 @@
-package Seminari3.Ushtrimi4;
+package Seminari3.Signal;
 
 import javax.swing.*;
 

@@ -1,4 +1,4 @@
-package Seminari3.Ushtrimi2;
+package Seminari3.Target;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package Seminari4.Ushtimi1;
+package Seminari4.Student;
 
 class Main
 {
