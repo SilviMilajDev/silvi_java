@@ -25,7 +25,7 @@ class FormatDate
         );
     }
 
-    private String getMonth() {
+    public String getMonth() {
         String month_names[] = {
                 "January", "February", "March", "April", "May", "July",
                 "June", "August", "September", "October", "November", "December"
@@ -40,7 +40,7 @@ class FormatDate
         );
     }
 
-    private int getDay() {
+    public int getDay() {
         return day;
     }
 
@@ -50,7 +50,7 @@ class FormatDate
         );
     }
 
-    private int getYear() {
+    public int getYear() {
         return year;
     }
 
