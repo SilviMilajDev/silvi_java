@@ -43,9 +43,7 @@ public class Main
 
     private static void setDay() {
         day = Integer.parseInt(
-                date.substring(date.indexOf('/')+1,
-                        date.indexOf('/', date.indexOf('/')+1)
-                )
+                date.substring(date.indexOf('/')+1, indexOfSecondSlash())
         );
     }
 
@@ -55,12 +53,16 @@ public class Main
 
     private static void setYear() {
         year = Integer.parseInt(
-                date.substring(date.indexOf('/', date.indexOf('/')+1)+1, date.length())
+                date.substring(indexOfSecondSlash()+1, date.length())
         );
     }
 
     private static int getYear() {
         return year;
+    }
+
+    private static int indexOfSecondSlash() {
+        return date.indexOf('/', date.indexOf('/') + 1);
     }
 
 }
