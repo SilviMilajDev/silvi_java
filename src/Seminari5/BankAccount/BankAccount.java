@@ -50,7 +50,7 @@ public class BankAccount
     }
 
     public void terhiq(double vlera) {
-        if (vlera > this.balanca) {
+        if (vlera > this.balanca || vlera < 0) {
             System.out.println("Vlera e kerkuar nuk mund te terhiqet");
             return;
         }
