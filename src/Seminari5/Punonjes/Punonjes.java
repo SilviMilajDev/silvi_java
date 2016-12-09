@@ -1,12 +1,10 @@
 package Seminari5.Punonjes;
 
-import java.util.Date;
 import java.util.Random;
 
 public class Punonjes
 {
-    private String id;
-    private String emri, mbiemri;
+    private String id, emri, mbiemri;
     private double paga_bruto;
 
     public Punonjes(String emri, String mbiemri) {
@@ -23,13 +21,18 @@ public class Punonjes
     }
 
     private String setId() {
-        Random rand = new Random();
-        int max_random_number = 999,
-            min_random_number = 100;
         return this.emri.charAt(0)
                 + "" + this.mbiemri.charAt(0)
-                + "" + (rand.nextInt(max_random_number - min_random_number + 1) + min_random_number)
+                + "" + this.randomNumber()
                 + "" + System.currentTimeMillis();
+    }
+
+    private int randomNumber() {
+        Random rand = new Random();
+        int max_number = 999,
+            min_number = 100;
+
+        return rand.nextInt(max_number - min_number + 1) + min_number;
     }
 
     public double llogaritPagenNeto() {
@@ -79,6 +82,6 @@ public class Punonjes
 
     public String toString() {
         return "Emer Mbiemer: " + this.emri + " " + this.mbiemri + "\n"
-                + "Paga Neto: " + llogaritPagenNeto();
+            + "Paga Neto: " + this.llogaritPagenNeto();
     }
 }
