@@ -22,9 +22,9 @@ public class Punonjes
 
     private String setId() {
         return this.emri.charAt(0)
-                + "" + this.mbiemri.charAt(0)
-                + "" + this.randomNumber()
-                + "" + System.currentTimeMillis();
+            + "" + this.mbiemri.charAt(0)
+            + "" + this.randomNumber()
+            + "" + System.currentTimeMillis();
     }
 
     private int randomNumber() {
