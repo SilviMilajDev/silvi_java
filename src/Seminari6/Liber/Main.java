@@ -15,6 +15,11 @@ public class Main
             liber_titulli, liber_zhanri;
         double liber_cmimi;
 
+        int numri_botuesve;
+        ArrayList<Botuesi> botuesit = new ArrayList<>();
+        Botuesi botuesi;
+        String botuesi_id;
+
         int numri_autoreve;
         ArrayList<Autor> autoret = new ArrayList<>();
         Autor autor;
@@ -23,7 +28,6 @@ public class Main
         System.out.print("Vendosni sa autore ka libri: ");
         numri_autoreve = in.nextInt();
 
-        // Consuming Next Line
         String consuming_next_line = in.nextLine();
 
         for (int i = 1; i <= numri_autoreve; i++) {
@@ -42,11 +46,23 @@ public class Main
             autoret.add(autor);
         }
 
-        System.out.print("Vendosni emrin e botuesit: ");
-        botuesi_emer = in.nextLine();
+        System.out.print("Vendosni sa botues ka libri: ");
+        numri_botuesve = in.nextInt();
 
-        System.out.print("Vendosni adresen e botuesit: ");
-        botuesi_adresa = in.nextLine();
+        consuming_next_line = in.nextLine();
+
+        for (int i = 1; i <= numri_botuesve; i++) {
+            System.out.print("Vendosni emrin e botuesit " + i + ": ");
+            botuesi_emer = in.nextLine();
+
+            System.out.print("Vendosni adresen e botuesit " + i + ": ");
+            botuesi_adresa = in.nextLine();
+
+            botuesi_id = UUID.randomUUID().toString().replaceAll("-", "");
+
+            botuesi = new Botuesi(botuesi_id, botuesi_emer, botuesi_adresa);
+            botuesit.add(botuesi);
+        }
 
         System.out.print("Vendosni titullin e librit: ");
         liber_titulli = in.nextLine();
@@ -57,13 +73,9 @@ public class Main
         System.out.print("Vendosni cmimin e librit: ");
         liber_cmimi = in.nextDouble();
 
-        String botuesi_id = UUID.randomUUID().toString().replaceAll("-", "");
-
-        Botuesi botuesi = new Botuesi(botuesi_id, botuesi_emer, botuesi_adresa);
-
         String liber_id = UUID.randomUUID().toString().replaceAll("-", "");
 
-        Liber liber = new Liber(liber_id, liber_titulli, liber_zhanri, autoret, botuesi, liber_cmimi);
+        Liber liber = new Liber(liber_id, liber_titulli, liber_zhanri, autoret, botuesit, liber_cmimi);
 
         System.out.println(
             "Titulli i Librit: "+ liber.getTitulli() + "\n"
@@ -74,6 +86,9 @@ public class Main
             System.out.println(" - " + liber.getAutoret().get(i).getEmer() + " " + liber.getAutoret().get(i).getMbiemer());
         }
 
-        System.out.println("Adresa e Shtepise Botuese: " + liber.getBotuesi().getAdresa());
+        System.out.println("Shtepite Botuese:");
+        for (int i = 0; i < liber.getBotuesit().size(); i++) {
+            System.out.println(" - " + liber.getBotuesit().get(i).getEmer() + " (" + liber.getBotuesit().get(i).getAdresa() + ")");
+        }
     }
 }

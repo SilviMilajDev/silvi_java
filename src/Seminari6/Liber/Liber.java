@@ -11,16 +11,16 @@ public class Liber
 
     private ArrayList<Autor> autoret;
 
-    private Botuesi botuesi;
+    private ArrayList<Botuesi> botuesit;
 
     private double cmimi;
 
-    public Liber(String isbn, String titulli, String zhanri, ArrayList<Autor> autoret, Botuesi botuesi, double cmimi) {
+    public Liber(String isbn, String titulli, String zhanri, ArrayList<Autor> autoret, ArrayList<Botuesi> botuesit, double cmimi) {
         this.isbn = isbn;
         this.titulli = titulli;
         this.zhanri = zhanri;
         this.autoret = autoret;
-        this.botuesi = botuesi;
+        this.botuesit = botuesit;
         this.cmimi = cmimi;
     }
 
@@ -56,12 +56,12 @@ public class Liber
         this.autoret = autoret;
     }
 
-    public Botuesi getBotuesi() {
-        return botuesi;
+    public ArrayList<Botuesi> getBotuesit() {
+        return botuesit;
     }
 
-    public void setBotuesi(Botuesi botuesi) {
-        this.botuesi = botuesi;
+    public void setBotuesit(ArrayList<Botuesi> botuesit) {
+        this.botuesit = botuesit;
     }
 
     public double getCmimi() {
@@ -82,8 +82,13 @@ public class Liber
             libri += " - " + this.autoret.get(i).getEmer() + " " + this.autoret.get(i).getMbiemer() + "\n";
         }
 
-        libri += "Botuesi: "+ botuesi.getEmer() + "\n"
-                + "Cmimi: "+ cmimi;
+        libri += "Botuesit:\n";
+
+        for (int i = 0; i < this.botuesit.size(); i++) {
+            libri += " - " + this.botuesit.get(i).getEmer() + "\n";
+        }
+
+        libri += "Cmimi: "+ cmimi;
 
         return libri;
     }
