@@ -1,5 +1,7 @@
 package Seminari6.Liber;
 
+import java.util.ArrayList;
+
 public class Liber
 {
     private String
@@ -7,17 +9,17 @@ public class Liber
         titulli,
         zhanri;
 
-    private Autor autor;
+    private ArrayList<Autor> autoret;
 
     private Botuesi botuesi;
 
     private double cmimi;
 
-    public Liber(String isbn, String titulli, String zhanri, Autor autor, Botuesi botuesi, double cmimi) {
+    public Liber(String isbn, String titulli, String zhanri, ArrayList<Autor> autoret, Botuesi botuesi, double cmimi) {
         this.isbn = isbn;
         this.titulli = titulli;
         this.zhanri = zhanri;
-        this.autor = autor;
+        this.autoret = autoret;
         this.botuesi = botuesi;
         this.cmimi = cmimi;
     }
@@ -46,12 +48,12 @@ public class Liber
         this.zhanri = zhanri;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public  ArrayList<Autor> getAutoret() {
+        return autoret;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAutoret( ArrayList<Autor> autoret) {
+        this.autoret = autoret;
     }
 
     public Botuesi getBotuesi() {
@@ -71,11 +73,18 @@ public class Liber
     }
 
     public String toString() {
-        return "ISBN: "+ isbn + "\n"
+        String libri = "ISBN: "+ isbn + "\n"
             + "Titulli: "+ titulli + "\n"
             + "Zhanri: "+ zhanri + "\n"
-            + "Autori: "+ autor.getEmer() + " " + autor.getMbiemer() + "\n"
-            + "Botuesi: "+ botuesi.getEmer() + "\n"
-            + "Cmimi: "+ cmimi;
+            + "Autoret:\n";
+
+        for (int i = 0; i < this.autoret.size(); i++) {
+            libri += " - " + this.autoret.get(i).getEmer() + " " + this.autoret.get(i).getMbiemer() + "\n";
+        }
+
+        libri += "Botuesi: "+ botuesi.getEmer() + "\n"
+                + "Cmimi: "+ cmimi;
+
+        return libri;
     }
 }
