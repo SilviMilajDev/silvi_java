@@ -20,9 +20,9 @@ class TreeComponent extends JComponent {
         Rectangle rectangle;
 
         for (int i = 1; i <= this.n; i++) {
-            int x = 300 - (rectangle_min_width * i) / 2;
-            int y = (i - 1) * rectangle_height + 25;
             int width = rectangle_min_width * i;
+            int x = 300 - width / 2;
+            int y = (i - 1) * rectangle_height + 25;
 
             rectangle = new Rectangle(x, y, width, rectangle_height);
 
