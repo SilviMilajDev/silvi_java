@@ -6,7 +6,6 @@ package Seminari12.Direktoria;
  * Nese elementi eshte direktori merr kontrollone nese ka elemente perberes
  * Nese ka afishon nje mesazh, perndryshe fshin skedarin ose direktorine
  * Perdorni klasen File
- * Character.isLetter()
  */
 
 public class Main
