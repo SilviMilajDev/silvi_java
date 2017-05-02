@@ -5,6 +5,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// NOTES
+// For the factorial do not use a number higher than 20 or the wrong result will be provided
+
 public class Main {
 
     public static void main(String[] args)
