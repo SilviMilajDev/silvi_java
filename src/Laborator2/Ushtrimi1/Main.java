@@ -55,7 +55,7 @@ public class Main {
                 int number = Integer.parseInt(num);
 
                 long factorial = 1;
-                while (number != 1) {
+                while (number != 1 && number > 0) {
                     factorial *= number;
                     number--;
                 }
