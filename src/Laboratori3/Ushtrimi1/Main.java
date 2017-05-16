@@ -15,13 +15,19 @@ public class Main
             if (file.exists()) {
                 FileReader f_reader = new FileReader("./README.md");
                 Scanner in = new Scanner(f_reader);
-                int chars = 0, words = 0, lines = 0;
+                int chars = -1, words = 0, lines = 0;
                 while (in.hasNextLine()) {
                     String line = in.nextLine();
                     lines++;
-                    if (line.equals("\n")) continue;
+                    chars++;
+                    if (line.equals("\n")) {
+                        continue;
+                    }
                     String words_array[] = line.split(" ");
-                    words += words_array.length;
+                    for (int i = 0; i < words_array.length; i++) {
+                        if (words_array[i].equals("")) continue;
+                        words++;
+                    }
                     chars += line.length();
                 }
                 System.out.println(
