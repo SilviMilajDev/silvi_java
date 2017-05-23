@@ -1,0 +1,11 @@
+Emri = Jack
+Lenda = Java
+Nota = 9
+
+Emri = Tim
+Lenda = Java
+Nota = 10
+
+Emri = John
+Lenda = Matematike
+Nota = 8
