@@ -32,24 +32,36 @@ public class Main
         JTextField shuma = new JTextField();
         control.add(shuma);
 
+        JTextArea historiku = new JTextArea();
+        historiku.setEditable(false);
+        JScrollPane scroll_historiku = new JScrollPane(historiku);
+
         JButton deposit = new JButton("Depozito");
         deposit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                double vlera = Double.parseDouble(shuma.);
-//                account.deposit();
+                double vlera = Double.parseDouble(shuma.getText());
+                account.deposit(vlera);
+                balanca.setText("Balanca: " + account.getBalance());
+                historiku.append("U depozituar shuma prej: " + vlera + "\n");
             }
         });
         control.add(deposit);
 
         JButton terhiq = new JButton("Terhiq");
+        terhiq.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                double vlera = Double.parseDouble(shuma.getText());
+                account.witdraw(vlera);
+                balanca.setText("Balanca: " + account.getBalance());
+                historiku.append("U terhoq shuma prej: " + vlera + "\n");
+            }
+        });
         control.add(terhiq);
 
         frame.add(control);
-
-        JTextArea historiku = new JTextArea();
-        historiku.setEditable(false);
-        frame.add(historiku);
+        frame.add(scroll_historiku);
 
         frame.setVisible(true);
     }
