@@ -19,8 +19,3 @@ public class Sentence {
         return find_helper(text, index + 1);
     }
 }
-
-
-// blahblahblah l:12
-// blah l:4
-// 12 - 4 = 8
