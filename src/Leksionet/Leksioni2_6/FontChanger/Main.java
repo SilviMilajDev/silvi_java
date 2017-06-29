@@ -1,4 +1,4 @@
-package Leksionet.FontChanger;
+package Leksionet.Leksioni2_6.FontChanger;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
