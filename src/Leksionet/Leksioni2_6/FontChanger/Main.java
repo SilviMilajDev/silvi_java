@@ -26,7 +26,7 @@ public class Main
 
         JPanel functionality_panel = new JPanel();
 
-        JComboBox font = new JComboBox();
+        JComboBox<String> font = new JComboBox<>();
         font.addItem("Serif");
         font.addItem("SansSerif");
         font.addItem("Monospaced");
